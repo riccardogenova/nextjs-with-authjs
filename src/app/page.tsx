@@ -1,6 +1,7 @@
 import { auth } from "../auth";
-import { ButtonGitHubSignIn } from "./components/Button.GitHub.SignIn";
-import { GitHubUser } from "./components/GitHub.User";
+import { ButtonGitHub } from "./components/buttons/Button.GitHub";
+import { ButtonGoogle } from "./components/buttons/Button.Google";
+import { UserDetail } from "./components/User.Detail";
 
 export default async function Page() {
   const session = await auth();
@@ -11,7 +12,14 @@ export default async function Page() {
         !!session && "bg-[#1f2329]"
       }`}
     >
-      {session ? <GitHubUser session={session} /> : <ButtonGitHubSignIn />}
+      {session ? (
+        <UserDetail session={session} />
+      ) : (
+        <div className="flex space-x-4">
+          <ButtonGitHub />
+          <ButtonGoogle />
+        </div>
+      )}
     </div>
   );
 }

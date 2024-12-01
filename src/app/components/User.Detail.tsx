@@ -6,7 +6,7 @@ interface Props {
   session: Session;
 }
 
-export const GitHubUser = ({ session }: Props) => (
+export const UserDetail = ({ session }: Props) => (
   <div className="flex flex-col items-center text-white p-4  max-w-md mx-auto">
     <div className="rounded-full border-2 border-white pl-2 pr-6 py-2">
       <div className="flex items-center gap-4 w-full">

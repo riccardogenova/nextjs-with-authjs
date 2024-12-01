@@ -2,8 +2,12 @@
 
 import { signIn, signOut } from "./auth";
 
-export const actionLogin = async () => {
+export const actionLoginGitHub = async () => {
   await signIn("github");
+};
+
+export const actionLoginGoogle = async () => {
+  await signIn("google");
 };
 
 export const actionLogout = async () => {

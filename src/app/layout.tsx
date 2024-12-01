@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
 import { Navbar } from "./components/Navbar";
+import { FaCode } from "react-icons/fa";
+
+import "./globals.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,8 +17,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "GitHub Auth with NextJS",
-  description: "Example of GitHub OAuth with NextJS v15 + AuthJS beta version",
+  title: "NextJS authentication example with Auth.JS",
+  description: "Example of authentication methods with NextJS v15 + Auth.JS",
 };
 
 export default function RootLayout({
@@ -31,6 +33,15 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <a
+          href="https://riccardogenova.dev"
+          className="flex items-center fixed bottom-4 left-4 text-sm bg-[#a6e22e] py-1 px-4 font-bold rounded-lg transition-transform transform hover:scale-105"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaCode className="inline-block mr-2" />
+          <p>source code on riccardogenova.dev</p>
+        </a>
       </body>
     </html>
   );
