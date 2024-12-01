@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Navbar } from "./components/Navbar";
 import { FaCode } from "react-icons/fa";
-
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -42,6 +42,7 @@ export default function RootLayout({
           <FaCode className="inline-block mr-2" />
           <p>source code on riccardogenova.dev</p>
         </a>
+        <Analytics />
       </body>
     </html>
   );
