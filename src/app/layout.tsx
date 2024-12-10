@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Navbar } from "./components/Navbar";
+import { Navbar } from "../components/Navbar";
 import { FaCode } from "react-icons/fa";
 import { Analytics } from "@vercel/analytics/react";
+
 import "./globals.css";
 
 const geistSans = localFont({
@@ -28,9 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
         {children}
         <a
